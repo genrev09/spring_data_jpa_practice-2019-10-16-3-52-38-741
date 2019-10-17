@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `c`;
+DROP TABLE IF EXISTS `criminal_elements`;
 
 CREATE TABLE `criminal_elements` (
     `id` BINARY(16) NOT NULL,
