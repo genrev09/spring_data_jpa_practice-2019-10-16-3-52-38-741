@@ -60,4 +60,14 @@ public class ProsecutorAPITest {
         result.andExpect(jsonPath("$", hasSize(3)));
 
     }
+
+    @Test
+    void should_add_a_prosecutor() throws Exception {
+        when(prosecutorService.save(any())).thenReturn(true);
+        ResultActions result = mockMvc.perform(post("/api")
+                .content(new ObjectMapper().writeValueAsString(new Prosecutor()))
+                .contentType(MediaType.APPLICATION_JSON));
+        result.andExpect(status().isCreated());
+
+    }
 }
